@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9926820e01143fdd1f0ea3ea4a0757c7",
+    "revision": "d4711b3a4b34551488aea4e587213b12",
     "url": "/unbeatable-tictactoe/index.html"
   },
   {
-    "revision": "5230d9f8ca4583a073c7",
+    "revision": "9bc2ba53fe3a614cfa9d",
     "url": "/unbeatable-tictactoe/static/css/main.8578a8f7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/unbeatable-tictactoe/static/js/2.90c69ce2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5230d9f8ca4583a073c7",
-    "url": "/unbeatable-tictactoe/static/js/main.564b1a59.chunk.js"
+    "revision": "9bc2ba53fe3a614cfa9d",
+    "url": "/unbeatable-tictactoe/static/js/main.0c602902.chunk.js"
   },
   {
     "revision": "4a9764921b9e6f8bc075",
