@@ -3,11 +3,10 @@ import { BoardState } from '../logic/board';
 import { TileState } from '../logic/tile-state';
 import { Tile } from './tile';
 import { bestMove } from '../logic/bot';
-
+const botDelay = 300;
+let botStart = false;
+const bot = TileState.Cross;
 export const Game: FunctionComponent = () => {
-  const botDelay = 300;
-  let botStarted = false;
-  const bot = TileState.Cross;
   const [boardState, setBoard] = useState(new BoardState(TileState.Circle));
   const gameOverCheck = (board: BoardState) => {
     const won = board.wonGame();
@@ -29,14 +28,15 @@ export const Game: FunctionComponent = () => {
   };
 
   const restart = () => {
-    let newBoard = new BoardState(botStarted ? bot * -1 : bot);
-    if (!botStarted) {
+    let newBoard = new BoardState(botStart ? bot * -1 : bot);
+    if (!botStart) {
       setTimeout(
         () => setBoard(newBoard.makeMove(bestMove(newBoard))),
         botDelay
       );
     }
     setBoard(newBoard);
+    botStart = !botStart;
   };
   return (
     <div className='wrapper'>
