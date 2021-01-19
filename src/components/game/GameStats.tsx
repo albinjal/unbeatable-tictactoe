@@ -1,25 +1,15 @@
 import { Switch } from '@material-ui/core';
 import React from 'react';
-import GithubCorner from 'react-github-corner';
 import { BoardState } from '../../logic/board';
-import { otherPlayer } from '../../logic/outcomes';
-import { GameModes, Player } from './Game';
+import { Player } from './Game';
 
 interface Props {
   boardState: BoardState;
   switchBotDelay: (delay: boolean) => void;
-  changeMode: (mode: GameModes) => void;
   botDelayOn: boolean;
-  mode: GameModes;
 }
 
-export const GameStats: React.FunctionComponent<Props> = ({
-  boardState,
-  botDelayOn,
-  mode,
-  switchBotDelay,
-  changeMode,
-}: Props) => {
+export const GameStats: React.FunctionComponent<Props> = ({ boardState, botDelayOn, switchBotDelay }: Props) => {
   return (
     <div className="flex flex-col p-4 items-center bg-honeydew shadow rounded m-2 w-full max-w-md border">
       <h1 className="text-3xl text-center font-light">Unbeatable TicTacToe</h1>
