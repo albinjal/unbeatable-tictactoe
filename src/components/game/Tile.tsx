@@ -2,7 +2,7 @@ import { Outcomes } from '../../logic/outcomes';
 import React from 'react';
 
 const tileColors = {
-  [Outcomes.Neutral]: 'bg-soft-white"',
+  [Outcomes.Neutral]: 'bg-soft-white',
   [Outcomes.Circle]: 'bg-red-800',
   [Outcomes.Cross]: 'bg-green-700',
 };

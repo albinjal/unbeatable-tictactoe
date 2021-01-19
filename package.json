@@ -6,11 +6,9 @@
   "homepage": "http://albinjal.github.io/unbeatable-tictactoe",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-github-corner": "^2.5.0",
     "react-scripts": "3.4.1",
     "tailwindcss": "^1.5.1",
     "typescript": "^3.9.5"
@@ -44,6 +42,10 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-github-button": "^0.1.0",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
     "@typescript-eslint/parser": "^3.4.0",
     "chokidar-cli": "^2.1.0",

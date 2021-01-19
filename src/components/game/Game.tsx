@@ -7,6 +7,8 @@ import { calculateBestMove } from '../../logic/bot';
 import { GameStats } from './GameStats';
 import { SnackbarContext } from '../snackbars/SnackbarWrapper';
 
+const standardDelay = 700;
+
 export enum GameModes {
   PvP,
   PvB,
@@ -19,7 +21,7 @@ const Game: React.FunctionComponent = () => {
   const [startingNext, setStarting] = useState<Players>(Player);
   const [boardState, setBoard] = useState<BoardState>(new BoardState(startingNext));
   const [mode, setMode] = useState(GameModes.PvB);
-  const [delay, setDelay] = useState(700);
+  const [delayOn, setDelayOn] = useState(true);
   const { openSnackbar } = useContext(SnackbarContext);
 
   useEffect(() => {
@@ -37,9 +39,12 @@ const Game: React.FunctionComponent = () => {
   const botTurn = async () => {
     const optimalMove = await calculateBestMove(boardState);
     // Delay for dramatic effect
-    setTimeout(() => {
-      makeMove(optimalMove);
-    }, delay * 50);
+    setTimeout(
+      () => {
+        makeMove(optimalMove);
+      },
+      delayOn ? standardDelay : 0,
+    );
   };
 
   const makeMove = (tile: number) => {
@@ -61,8 +66,8 @@ const Game: React.FunctionComponent = () => {
     setTimeout(restart, 1000);
   };
 
-  const changeBotDelay = (ms: number) => {
-    setDelay(ms);
+  const switchBotDelay = (delay: boolean) => {
+    setDelayOn(delay);
   };
 
   const changeMode = (mode: GameModes) => {
@@ -75,8 +80,8 @@ const Game: React.FunctionComponent = () => {
       <GameStats
         boardState={boardState}
         changeMode={changeMode}
-        changeDelay={changeBotDelay}
-        botDelay={delay}
+        switchBotDelay={switchBotDelay}
+        botDelayOn={delayOn}
         mode={mode}
       />
     </div>
